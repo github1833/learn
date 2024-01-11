@@ -1,0 +1,45 @@
+-- DML insert update delete
+-- insert into tb (column1,column2......) values 
+-- (v1,v2......),(),().......
+
+-- update tb set column1 = new_v1,column2 = new_v2......
+-- where condition;
+
+-- delete from tb
+-- where condition;
+
+select  c1
+        ,c2
+        ,c3
+        ,c4
+        ,最后需要查询的列
+        ,如果有group by分组操作，则要注意查询的列 必须出现在分组字段中或者聚合函数里
+        ,聚合函数：min、max、sum、count、avg
+        ......
+from tb1 as 别名
+where condition
+group by 某个或某些字段
+having 进行分组之后的过滤
+order by 进行排序，优先级在分组聚合过滤之后
+limit 限制返回的数据条数，还可以用于分页
+
+union / join
+
+union ：union、union all 有无去重
+join 关联操作：
+内/外连接：inner join、join、left join、right join、full join
+当两张表中的所有数据都能够关联上，那不管用哪种关联方式结果都是一样的
+不同的关联方式只有在有数据关联不上的情况下，才会产生不同的结果
+
+MySQL 5.7中常用的函数：
+数值函数：log、sin、cos、round、ceil、floor等等
+字符串函数：concat、concat_ws、substring、大小写转换等
+日期时间类型函数：日期字符串与时间戳之间的相互转换、日期的加减操作
+条件函数：if、case when、coalesce、ifnull
+聚合函数：min、max、sum、count、avg
+其他函数：distinct
+
+窗口函数：MySQL5.7中没有，在Hive、Spark、Flink中会使用
+    排名函数：row_number、rank、dense_rank
+    取值函数：lag、lead、first_value、last_value
+    聚合函数：min、max、sum、count、avg
