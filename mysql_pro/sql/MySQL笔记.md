@@ -842,6 +842,7 @@ DROP INDEX indexName ON mytable;
 
 ```
 CREATE UNIQUE INDEX indexName ON mytable(username(length)) 
+CREATE INDEX I
 ```
 
 ###### 修改表结构
